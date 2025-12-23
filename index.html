@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Iram ❤️</title>
+<link rel="love.mp3" href="">
+
+<style>
+/* 🌙 ROMANTIC NIGHT THEME */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #2b1055, #0f051d);
+  color: #fbeaff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 90px 20px;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #ffd1dc;
+}
+
+h2 {
+  font-weight: 300;
+  color: #f8cdda;
+}
+
+p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* 🌹 BUTTON */
+.btn {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #2b1055;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  box-shadow: 0 0 25px rgba(255, 126, 179, 0.9);
+  transform: scale(1.08);
+}
+
+/* ✨ FADE */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(35px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* ❤️ FLOATING HEARTS */
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  font-size: 22px;
+  animation: floatUp 7s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* 🎉 CONFETTI */
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 9px;
+  height: 9px;
+  animation: fall 3.2s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  h1 { font-size: 2.1rem; }
+  section { padding: 70px 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 BACKGROUND SONG -->
+<audio autoplay loop>
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ❤️ HEARTS -->
+<div class="hearts">
+  <span class="heart" style="left:8%">💖</span>
+  <span class="heart" style="left:25%">❤️</span>
+  <span class="heart" style="left:45%">💗</span>
+  <span class="heart" style="left:65%">💞</span>
+  <span class="heart" style="left:85%">💖</span>
+</div>
+
+<!-- 🎂 HERO -->
+<section>
+  <h1>Happy Birthday Iram 🌙💖</h1>
+  <h2>You are my calm, my magic, my forever</h2>
+</section>
+
+<!-- 💌 LOVE LETTER -->
+<section>
+  <h1>My Love Letter 💌</h1>
+  <p>
+    My dearest Iram,<br><br>
+    In a world full of noise, you are my peace.  
+    In moments of darkness, you are my light.  
+    Loving you feels effortless, beautiful, and eternal.
+  </p>
+  <p>
+    On your birthday and every day after,  
+    I choose you — again and again.
+  </p>
+  <h2>— Yours, Faheem ❤️</h2>
+</section>
+
+<!-- ⏳ COUNTDOWN -->
+<section>
+  <h1>Until Your Special Day ⏳</h1>
+  <h2>2nd March 🎂</h2>
+  <h2 id="timer"></h2>
+</section>
+
+<!-- 🎁 SURPRISE -->
+<section>
+  <h1>Something Just for You 🎁</h1>
+  <button class="btn" onclick="surprise()">Open My Heart 💖</button>
+</section>
+
+<!-- 💍 FOREVER -->
+<section>
+  <h1>Forever Us 💍</h1>
+  <p>
+    Today is your birthday, Iram,<br>
+    but my promise to you is timeless.
+  </p>
+  <h2>Always You. Always Me. Forever 🌙❤️</h2>
+  <h2>— Faheem</h2>
+</section>
+
+<script>
+/* ⏳ COUNTDOWN (2 MARCH) */
+const birthday = new Date("2026-03-02").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = birthday - now;
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff / (1000*60*60)) % 24);
+  const m = Math.floor((diff / (1000*60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("timer").innerHTML =
+    `${d} Days ${h}h ${m}m ${s}s`;
+}, 1000);
+
+/* 🎉 CONFETTI */
+function surprise() {
+  alert("Happy Birthday Iram ❤️\nYou are my forever 🌙");
+
+  for (let i = 0; i < 80; i++) {
+    const c = document.createElement("div");
+    c.className = "confetti";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.background =
+      ["#ff758c","#ffd1dc","#cdb4db"][Math.floor(Math.random()*3)];
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
+  }
+}
+</script>
+
+</body>
+</html>
