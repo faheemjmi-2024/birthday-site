@@ -43,7 +43,7 @@ p{
   color:#6d4c4c;
 }
 
-/* Timer */
+/* ⏳ TIMER */
 #timer{
   font-size:2.3rem;
   margin-top:20px;
@@ -51,62 +51,27 @@ p{
   text-shadow:0 0 15px rgba(231,84,128,0.6);
 }
 
-/* Button */
-.btn{
-  background:linear-gradient(135deg,#ff9a9e,#fecfef);
-  color:#5a2d2d;
-  padding:14px 36px;
-  border:none;
-  border-radius:35px;
-  font-size:16px;
-  cursor:pointer;
-  font-weight:600;
-}
-.btn:hover{
-  box-shadow:0 0 25px rgba(255,154,158,.8);
-  transform:scale(1.08);
-}
-
-/* Fade */
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:none}
-}
-
 /* ⭐ Soft Sparkles */
-.stars,.effects{
+.effects{
   position:fixed;
   top:0;left:0;
   width:100%;height:100%;
   pointer-events:none;
 }
 
-.star{
+.sparkle{
   position:absolute;
-  width:3px;height:3px;
-  background:#fff;
-  border-radius:50%;
-  animation:twinkle 5s infinite;
-  opacity:.6;
-}
-@keyframes twinkle{
-  0%,100%{opacity:.2}
-  50%{opacity:.8}
-}
-
-/* ✨ Floating Emojis */
-.float{
-  position:absolute;
-  font-size:20px;
+  font-size:18px;
   animation:floatUp 9s linear forwards;
 }
+
 @keyframes floatUp{
   from{opacity:0;transform:translateY(0)}
   20%{opacity:1}
   to{opacity:0;transform:translateY(-900px)}
 }
 
-/* 📸 Gallery (2 photos) */
+/* 📸 GALLERY (2 PHOTOS) */
 .gallery{
   display:flex;
   justify-content:center;
@@ -114,15 +79,19 @@ p{
   max-width:620px;
   margin:40px auto 0;
 }
+
 .gallery img{
   width:45%;
   border-radius:18px;
   box-shadow:0 0 25px rgba(255,170,185,.6);
   transition:.4s;
 }
-.gallery img:hover{transform:scale(1.07)}
 
-/* 📱 Mobile */
+.gallery img:hover{
+  transform:scale(1.07);
+}
+
+/* 📱 MOBILE */
 @media(max-width:768px){
   h1{font-size:2.1rem}
   section{padding:70px 15px}
@@ -134,23 +103,28 @@ p{
     margin:auto;
   }
 }
+
+/* Fade */
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:none}
+}
 </style>
 </head>
 
 <body>
 
-<!-- 🎶 Optional Soft Music -->
+<!-- 🎶 OPTIONAL BACKGROUND MUSIC -->
 <audio autoplay loop>
   <source src="love.mp3" type="audio/mpeg">
 </audio>
 
-<div class="stars" id="stars"></div>
 <div class="effects" id="effects"></div>
 
 <!-- 🎂 HERO -->
 <section>
   <h1>Happy Birthday Iram 🎉🌸</h1>
-  <h2>Wishing you a day as lovely as this pastel sky</h2>
+  <h2>Wishing you a calm, happy, and beautiful day</h2>
 </section>
 
 <!-- 📝 MESSAGE -->
@@ -158,10 +132,10 @@ p{
   <h1>A Friendly Wish 💫</h1>
   <p>
     Dear Iram,<br><br>
-    May your birthday bring calm moments, happy smiles,
-    and positive energy for the year ahead.
-    Wishing you success, good health,
-    and many beautiful days to come.
+    On your special day, wishing you happiness,
+    good health, and success in everything you do.
+    May this year bring positivity, peace,
+    and many moments worth smiling about.
   </p>
   <h2>— Best wishes, Faheem</h2>
 </section>
@@ -169,7 +143,7 @@ p{
 <!-- ⏳ COUNTDOWN -->
 <section>
   <h1>Countdown to Your Day ⏳</h1>
-  <h2>2nd March 🎂</h2>
+  <h2>2nd March 2026 🎂</h2>
   <h2 id="timer">Loading...</h2>
 </section>
 
@@ -183,17 +157,12 @@ p{
   </div>
 </section>
 
-<!-- 🎁 SURPRISE -->
-<section>
-  <button class="btn" onclick="surprise()">Birthday Surprise 🎉</button>
-</section>
-
 <!-- 🎉 END -->
 <section>
-  <h1>Have a Beautiful Birthday 🎂</h1>
+  <h1>Have a Wonderful Birthday 🎂</h1>
   <p>
-    Stay happy, stay kind,<br>
-    and enjoy every little moment 🌸
+    Stay happy, stay positive,<br>
+    and enjoy every moment of your special day 🌸
   </p>
   <h2>— From your friend, Faheem</h2>
 </section>
@@ -201,31 +170,20 @@ p{
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* ⭐ Soft Sparkles */
-  const stars = document.getElementById("stars");
-  for(let i=0;i<120;i++){
-    let s=document.createElement("div");
-    s.className="star";
-    s.style.left=Math.random()*100+"vw";
-    s.style.top=Math.random()*100+"vh";
-    s.style.animationDelay=Math.random()*5+"s";
-    stars.appendChild(s);
-  }
-
-  /* ✨ Floating Emojis */
+  /* ✨ FLOATING SPARKLES */
   const effects = document.getElementById("effects");
   setInterval(()=>{
-    let f=document.createElement("div");
-    f.className="float";
-    f.innerHTML=["🌸","✨","💫","🎈","💐"][Math.floor(Math.random()*5)];
-    f.style.left=Math.random()*100+"vw";
-    f.style.bottom="-20px";
-    effects.appendChild(f);
-    setTimeout(()=>f.remove(),9000);
+    let s=document.createElement("div");
+    s.className="sparkle";
+    s.innerHTML=["🌸","✨","💫","🎈","💐"][Math.floor(Math.random()*5)];
+    s.style.left=Math.random()*100+"vw";
+    s.style.bottom="-20px";
+    effects.appendChild(s);
+    setTimeout(()=>s.remove(),9000);
   },1400);
 
-  /* ⏳ COUNTDOWN */
-  const birthday = new Date("2027-03-02T00:00:00").getTime();
+  /* ⏳ TIMER — 2 MARCH 2026 */
+  const birthday = new Date("2026-03-02T00:00:00").getTime();
   const timer = document.getElementById("timer");
 
   function updateTimer(){
@@ -249,11 +207,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateTimer();
   setInterval(updateTimer, 1000);
 });
-
-/* 🎉 Surprise */
-function surprise(){
-  alert("🎉 Happy Birthday Iram!\nWishing you a lovely year ahead 🌸");
-}
 </script>
 
 </body>
